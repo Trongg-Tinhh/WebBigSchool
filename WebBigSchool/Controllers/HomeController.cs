@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using WebBigSchool.Models;
+using WebBigSchool.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace WebBigSchool.Controllers
 {
@@ -21,9 +23,14 @@ namespace WebBigSchool.Controllers
         {
             var upcommingCourse = _dbContext.Courses
                 .Include(c => c.Lecturer)
-                .Include(c => c.Category)
-                .Where(c => c.DateTime > DateTime.Now);
-            return View(upcommingCourse);
+                .Include(c => c.Category);/*
+                .Where(c => c.DateTime > DateTime.Now);*/
+            var viewModel =  new CoursesViewModel
+            {
+                UpcommingCourse = upcommingCourse,
+                ShowAction= User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
         }
 
         public ActionResult About()

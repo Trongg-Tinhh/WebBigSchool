@@ -7,13 +7,13 @@ namespace WebBigSchool.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddNameColumnToApplicationUser : IMigrationMetadata
+    public sealed partial class newdatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNameColumnToApplicationUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newdatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303162008158_AddNameColumnToApplicationUser"; }
+            get { return "202303210124299_newdatabase"; }
         }
         
         string IMigrationMetadata.Source

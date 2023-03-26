@@ -1,8 +1,10 @@
-﻿@model WebBigSchool.ViewModels.CoursesViewModel
+﻿
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Attending</h2>
 <main>
     <div class="row">
         <ul class="course">
@@ -20,7 +22,8 @@
                     <div class="details">
                         <span class="lecturer">
                             @course.Lecturer.Name
-                            @if(Model.ShowAction){
+                            @if (Model.ShowAction)
+                            {
                                 <button data-user-id="@course.LecturerId" class="btn btn-light btn-sm js-toggle-follow">Follow</button>
                             }
                         </span>
@@ -32,7 +35,7 @@
                                 <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
                             }
                         </span>
-                        
+
                     </div>
                 </li>
             }
@@ -63,18 +66,15 @@
                         button
                             .removeClass("btn-light")
                             .addClass("btn-info")
-                            .text("Following")  
+                            .text("Following")
                     })
                     .fail(function () {
                         alert("Something failed!")
                     });
             });
         });
-        
+
     </script>
-    
-    }   
 
-
-
+}
 

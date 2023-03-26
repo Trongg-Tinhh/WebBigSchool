@@ -11,7 +11,8 @@
                     @User.Identity.GetUserName()
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Course I'm Going</a></li>
+                    <li><a class="dropdown-item" href="@Url.Action("Mine","Courses")">My Upcoming Courses</a></li>
+                    <li><a class="dropdown-item" href="@Url.Action("Attending","Courses")">Course I'm Going</a></li>
                     <li><a class="dropdown-item" href="#">Lecture I'm Flowing</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
